@@ -6,9 +6,24 @@
     display:inline-block;
     border: 2px solid black;
     padding: 10px;
-    background-color: grey
+    background-color: grey;
+}
+#center {
+    
+}
+
+.applepie{
+    position: fixed;
+    top: 300px;
+    
 }
 
 #navbar a {
     color: white;
 }
+.foogle {
+    border-bottom-width: 350px; height:250px;
+}
+
+
+
