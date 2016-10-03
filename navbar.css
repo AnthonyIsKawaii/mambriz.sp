@@ -13,9 +13,20 @@
 }
 
 .applepie{
-    position: fixed;
+    /*position: fixed;*/
     top: 300px;
-    
+    width:-300px;
+}
+
+.raspberrypie{
+    /*position: fixed;*/
+    top: 450px;
+    width:-300px;
+}
+
+.blackberrypie{
+    /*position: fixed;*/
+    top:550;
 }
 
 #navbar a {
