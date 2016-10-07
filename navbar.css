@@ -26,7 +26,44 @@
 
 .blackberrypie{
     /*position: fixed;*/
-    top:550;
+    top:550px;
+}
+
+.cherrypie{
+    /*position:fixed;*/
+    top:450px;
+}
+
+.pumpkinpie{
+    top:450px;
+}
+
+.coconutpie{
+    top:450px;
+}
+
+.blueberrypie{
+    top:550px;
+}
+
+.boysenberrypie{
+    top:650px;
+}
+
+.bumbleberrypie{
+    top:650px;
+}
+
+.peachpie{
+    top:650px;
+}
+
+.peacanpie{
+    top:750px;
+}
+
+.rainbowpie{
+    top:850px;
 }
 
 #navbar a {
