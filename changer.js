@@ -4,8 +4,7 @@ var colorChangeButton = document.getElementById("colorChangeButton");
 
 /* Eventlistener for button.
     Sets the body's background color to the user provided value */
-
-colorChangeButton.addEventListener("click",function(){
+colorChangeButton.addEventListener("click", function(){
     document.body.style.backgroundColor = newBGcolor.value;
 
 })
