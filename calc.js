@@ -30,9 +30,9 @@ solve.addEventListener("click", function(){
     var an = Math.pow(num1,num2);
     display.innerHTML = an;
   }
-  else if(selector.value == "square root"){
-   var a = math.sqrt = num1 x num2;
-   display.innerHTML = a;
+  else if(selector.value == "sqrt"){
+    var a = Math.sqrt(num1);
+    display.innerHTML = a;
   }
   
 });
