@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dark Souls 3 Damage Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.min.js"></script>
+    <script src="tabletop.js"></script>
+    <script src="big.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	
+    
+</head>
+
+<body>
+    <h1>Calc V1.5</h1> 
+    <div class="weaponSelects">
+        <div class="weaponSelectHeaders">
+            <div>Weapon Type</div><div>Weapon</div><div>Reinforcement</div>
+        </div>
+        <div class="weaponSelectSelects">
+            <select id="weaponTypeSelect" size = "18"></select><select id="weaponSelect" size = "18"></select><select id="reinforcementSelect" size = "18"></select>
+        </div>
+    </div>
+    <div class="damageDisplay">
+        <div class="damageDisplayHeader">
+            <div>Type</div>
+            <div>Base</div>
+            <div> </div>
+            <div>Bonus</div>
+            <div>Total</div>
+        </div>
+        <div class="damageIndivDisplay">
+            <div class="damageName">Phys:</div>
+            <div id="physBaseDisplay">0</div>
+            <div>+</div>
+            <div id="physBonusDisplay">0</div>
+            <div id="physTotalDisplay">0</div>
+        </div>
+        <div class="damageIndivDisplay">
+            <div class="damageName">Magic:</div>
+            <div id="magiBaseDisplay">0</div>
+            <div>+</div>
+            <div id="magiBonusDisplay">0</div>
+            <div id="magiTotalDisplay">0</div>
+        </div>
+        <div class="damageIndivDisplay">
+            <div class="damageName">Fire:</div>
+            <div id="fireBaseDisplay">0</div>
+            <div>+</div>
+            <div id="fireBonusDisplay">0</div>
+            <div id="fireTotalDisplay">0</div>
+        </div>
+        <div class="damageIndivDisplay">
+            <div class="damageName">Lightning:</div>
+            <div id="lghtBaseDisplay">0</div>
+            <div>+</div>
+            <div id="lghtBonusDisplay">0</div>
+            <div id="lghtTotalDisplay">0</div>
+        </div>
+        <div class="damageIndivDisplay">
+            <div class="damageName">Dark:</div>
+            <div id="darkBaseDisplay">0</div>
+            <div>+</div>
+            <div id="darkBonusDisplay">0</div>
+            <div id="darkTotalDisplay">0</div>
+        </div>
+    </div>
+     <div class="statSelects">
+        <div class="statIndivSelect">
+            <div>Strength:</div>
+            <div><select id="attributeStr"></select></div>
+        </div>
+        <div class="statIndivSelect">
+            <div>Dexterity:</div>
+            <div><select id="attributeDex"></select></div>
+        </div>
+        <div class="statIndivSelect">
+            <div>Intelligence:</div>
+            <div><select id="attributeInt"></select></div>
+        </div>
+        <div class="statIndivSelect">
+            <div>Faith:</div>
+            <div><select id="attributeFth"></select></div>
+        </div>
+        <div class="statIndivSelect">
+            <div>Luck:</div>
+            <div><select id="attributeLck"></select></div>
+        </div>
+    </div>
+    <div class="infusionDiv">
+         Infused? <input type="checkbox" id="infusionCheckbox" value="infuseTrue">
+        <select id="infusionSelect"></select>
+    </div>
+    <button id="calculateButton">Calculate</button>
+    <div class="infobox">
+        <h3>What's new?</h3>
+        <ul>
+            <li>Infusions! (Sorta almost kinda not really)</li>
+            <ul>
+                <li>Infusions are even more of a bitch than I thought.</li>
+                <li>"Most" infusions should work WITHOUT REINFORCEMENT.</li>
+                <li>As soon as you introduce reinforcement, things get pretty wacky.</li>
+                <li>It's going to take a lot of trial and error to get reinforced infusions working, so please bear with me while I piece through the spaghetti.</li>
+                <li>Everything that was working before """"should"""" still be working now.</li>
+            </ul>
+            <li>There's a total value for each damage type now.</li>
+            <ul>
+                <li>You might notice that this value is one too large.</li>
+                <li>The reason for this being that damage values actually have decimal places that aren't displayed, both in game and in this calculator.</li>
+                <li>The displayed total here is the "true" total, including the unseen decimals.</li>
+            </ul>
+        </ul>
+		<h3>What this does:</h3>
+		<ul>
+			<li>Calculates the displayed AR for almost every melee weapon in the game.</li>
+		</ul>
+		<h3>What this does not (AKA todo list):</h3>
+		<ul>
+			<li>Calculate the displayed AR for these following weapons.</li>
+			<ul>
+				<li>Cleric's Candlestick</li>
+				<li>Gargoyle Flame Hammer</li>
+				<li>Anri's Straight Sword</li>
+				<li>Dancer's Enchanted Swords</li>
+				<li>Gargoyle Flame Spear</li>
+				<li>Possibly others (report them if you find them please)</li>
+				<li>These specific weapons don't follow the normal damage formula and I need to do more research about them.</li>
+			</ul>
+			
+			<li>Calculate ranged weapon damage.</li>
+			<ul>
+				<li>Ranged weapons might use the same formula, but I haven't tested them.</li>
+			</ul>
+            <li>Look pretty on smaller sized screens. (Really only looks alright on 1920x1080)</li>
+			<li>Pay attention to minimum stats required to wield a weapon.</li>
+            <li>Compare the difference in damage between two weapons. (Write it down by hand until I implement this, sorry)</li>
+			<li>Catch bugs very well. If you encounter a bug, please report it <a href="http://goo.gl/forms/WS2Lu1XeHd">here.</a></li>
+		</ul>
+    </div>
+    <div class="changelog">
+        <h3>Changelog</h3>
+        <ul>
+            <li>V1.5</li>
+            <ul>
+                <li>Groundwork for infusions</li>
+            </ul>
+            <li>V1.0</li>
+            <ul>
+                <li>Initial Release</li>
+            </ul>
+        </ul>
+    </div>
+	<div class="credits">
+		<p>Design/research/code by Trog(g). <a href="https://github.com/jsoma/tabletop">Tabletop.js</a> by Jonathan Soma. <a href="https://github.com/MikeMcl/big.js/">Big.js</a> by Michael Mclaughlin.</p>
+		<p>Shouts out to the mumble boyz</p>
+	</div>
+    <script src="calc.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-77293857-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
